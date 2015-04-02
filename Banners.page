@@ -1,0 +1,40 @@
+<apex:page standardStylesheets="false" sidebar="false"
+    showHeader="false" applyBodyTag="false" applyHtmlTag="false"
+    docType="html-5.0">
+  <apex:remoteObjects jsNamespace="RemoteObjectModel">
+      <apex:remoteObjectModel
+        name="Banner__c"
+        jsShorthand="Banner"
+        fields="Id,Name,Image_URL__c,Target_URL__c,Active__c"/>
+  </apex:remoteObjects>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="description" content="A simple banner manager"/>
+      <meta name="author" content="Jeff Douglas"/>
+    <title>Banner Manager</title>
+      <link rel="stylesheet" href="/resource/banners/styles/bootstrap.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header" style="padding-bottom:25px">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#/add">New Banner</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Banner Manager</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="app"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/resource/banners/scripts/app.js"></script>
+  </body>
+</html>
+</apex:page>
