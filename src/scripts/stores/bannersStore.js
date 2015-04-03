@@ -14,7 +14,7 @@ var bannersStore  = Reflux.createStore({
   init: function() {
 
     var salesforce = new RemoteObjectModel.Banner();
-
+    // fetch 5 record from the Banner__c custom object
     salesforce.retrieve({ limit: 5 }, function(err, records, event){
       if (err) console.log('Darn error: ' + err);
       if (!err) {
@@ -51,7 +51,7 @@ var bannersStore  = Reflux.createStore({
 
   // creates banner in sfdc & pushes it to the state of banners
   addBanner: function(banner) {
-    // construct an object for salesforce
+    // construct the object for salesforce
     var details = {
       Name: banner.name,
       Image_URL__c: banner.imageUrl,
