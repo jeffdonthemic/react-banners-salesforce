@@ -11,9 +11,9 @@ function getBanners() {
 
 var Banners = React.createClass({
 
-  // There appears to be a bug with trigger() is
+  // There appears to be a bug with trigger() when
   // used async. Use ListenerMixin to manually
-  // listen for the store change.
+  // listen for the store change. See
   // https://github.com/spoike/refluxjs/issues/226
   mixins: [Reflux.ListenerMixin],
 
@@ -26,6 +26,7 @@ var Banners = React.createClass({
         banners: BannersStore.getBanners()
     });
   },
+  // end bug-related code
 
   getInitialState: function() {
     return getBanners();
