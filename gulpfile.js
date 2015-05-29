@@ -101,6 +101,13 @@ gulp.task('serve', function() {
       }));
 });
 
+// HTML
+gulp.task('html', function() {
+    return gulp.src('src/*.html')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
+});
 
 // Clean
 gulp.task('clean', function(cb) {
